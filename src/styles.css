@@ -1,0 +1,68 @@
+@import './styles/tokens.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  color: var(--color-ink);
+  background: var(--color-bg);
+  font-family: var(--font-ui);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-base);
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+}
+
+a {
+  color: var(--color-accent);
+}
+
+.route-surface {
+  animation: route-fade var(--duration-route) var(--ease-standard);
+}
+
+.route-surface p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+@keyframes route-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: var(--focus-outline-width) solid var(--color-accent);
+  outline-offset: var(--focus-outline-offset);
+}
+
+.button {
+  min-height: var(--control-height);
+  padding: 0 var(--space-16);
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  transition: background-color var(--duration-hover) var(--ease-standard);
+}
+
+.button--secondary {
+  color: var(--color-ink);
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-line);
+}

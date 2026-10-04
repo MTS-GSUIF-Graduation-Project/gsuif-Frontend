@@ -1,0 +1,15 @@
+.loading-state {
+  color: var(--color-muted);
+}
+
+.loading-state__bar {
+  width: 100%;
+  height: var(--size-loading-bar);
+  margin-bottom: var(--space-12);
+  background: var(--color-accent);
+  border-radius: var(--radius-control);
+}
+
+.loading-state p {
+  margin: 0;
+}

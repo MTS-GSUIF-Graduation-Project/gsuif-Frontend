@@ -1,0 +1,18 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="top-bar">
+  <div class="top-bar__inner">
+    <a class="top-bar__brand" routerLink="/">GSUIF</a>
+    <nav class="top-bar__nav" aria-label="Primary"></nav>
+  </div>
+</header>
+
+<app-notification-banner
+  *ngIf="notifications.message() as message"
+  [message]="message"
+  (dismissed)="notifications.clear()"
+></app-notification-banner>
+
+<main id="main-content" class="page-shell" tabindex="-1">
+  <router-outlet></router-outlet>
+</main>

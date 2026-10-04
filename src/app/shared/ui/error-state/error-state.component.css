@@ -1,0 +1,7 @@
+.error-state {
+  color: var(--color-danger);
+}
+
+.error-state p {
+  margin: 0 0 var(--space-12);
+}
