@@ -5,6 +5,7 @@ import { ErrorStateComponent } from './ui/error-state/error-state.component';
 import { LoadingStateComponent } from './ui/loading-state/loading-state.component';
 import { NotificationBannerComponent } from './ui/notification-banner/notification-banner.component';
 import { PageHeaderComponent } from './ui/page-header/page-header.component';
+import { ThemeToggleComponent } from './ui/theme-toggle/theme-toggle.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { PageHeaderComponent } from './ui/page-header/page-header.component';
     ErrorStateComponent,
     LoadingStateComponent,
     NotificationBannerComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    ThemeToggleComponent
   ],
   imports: [
     CommonModule
@@ -22,7 +24,8 @@ import { PageHeaderComponent } from './ui/page-header/page-header.component';
     ErrorStateComponent,
     LoadingStateComponent,
     NotificationBannerComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    ThemeToggleComponent
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,63 @@
+<section class="login-route route-surface" aria-labelledby="login-title">
+  <div class="login-card">
+    <div class="login-card__plane" aria-hidden="true"></div>
+    <p class="login-card__product">MetaFrame</p>
+
+    <div class="login-card__form">
+      <h1 id="login-title">Sign in</h1>
+
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <div class="form-field">
+          <label for="username">Username</label>
+          <input
+            #usernameInput
+            id="username"
+            type="text"
+            formControlName="username"
+            autocomplete="username"
+            [attr.aria-invalid]="fieldMessage('username') ? 'true' : 'false'"
+            [attr.aria-describedby]="fieldMessage('username') ? 'username-error' : null"
+          >
+          <p *ngIf="fieldMessage('username')" id="username-error" class="field-error">
+            {{ fieldMessage('username') }}
+          </p>
+        </div>
+
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input
+            #passwordInput
+            id="password"
+            type="password"
+            formControlName="password"
+            autocomplete="current-password"
+            [attr.aria-invalid]="fieldMessage('password') ? 'true' : 'false'"
+            [attr.aria-describedby]="fieldMessage('password') ? 'password-error' : null"
+          >
+          <p *ngIf="fieldMessage('password')" id="password-error" class="field-error">
+            {{ fieldMessage('password') }}
+          </p>
+        </div>
+
+        <p class="form-error" aria-live="polite">{{ formError }}</p>
+
+        <button type="submit" class="button button--primary" [disabled]="isBusy">
+          {{ isBusy ? 'Signing in' : 'Sign in' }}
+        </button>
+      </form>
+    </div>
+
+    <div class="login-card__mark" aria-hidden="true">
+      <!-- <svg class="gear-mark gear-mark--front" viewBox="20 30 90 120" preserveAspectRatio="xMidYMid meet" focusable="false" aria-hidden="true" pointer-events="none">
+        <path class="gear-shape" ></path>
+        <circle class="gear-hole" cx="78" cy="82" r="38"></circle>
+        <path class="gear-code" d="M61 69L46 82l15 13M96 69l15 13-15 13M85 63l-13 38"></path>
+      </svg> -->
+      <!-- <svg class="gear-mark gear-mark--front" viewBox="0 0 160 160" preserveAspectRatio="xMidYMid meet" focusable="false" aria-hidden="true" pointer-events="none">
+        <path class="gear-shape" d="M78 10l10 18 20-4 4 20 19 7-8 19 13 12-13 13 8 19-19 7-4 20-20-4-10 18-17-11-19 4-5-20-18-7 8-19-13-13 13-12-8-19 18-7 5-20 19 4z"></path>
+        <circle class="gear-hole" cx="78" cy="82" r="38"></circle>
+        <path class="gear-code" d="M61 69L46 82l15 13M96 69l15 13-15 13M85 63l-13 38"></path>
+      </svg> -->
+    </div>
+  </div>
+</section>
