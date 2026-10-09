@@ -11,11 +11,24 @@ html {
   font-family: var(--font-ui);
   font-size: var(--font-size-body);
   line-height: var(--line-height-base);
+  transition:
+    background-color var(--duration-theme) var(--ease-standard),
+    color var(--duration-theme) var(--ease-standard);
 }
 
 body {
+  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
-  background: var(--color-bg);
+  background: var(--color-bg-gradient);
+  transition: background var(--duration-theme) var(--ease-standard);
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 a {
@@ -56,7 +69,7 @@ textarea {
 .button {
   min-height: var(--control-height);
   padding: 0 var(--space-16);
-  border-radius: var(--radius-control);
+  border-radius: var(--radius-pill);
   cursor: pointer;
   transition: background-color var(--duration-hover) var(--ease-standard);
 }
